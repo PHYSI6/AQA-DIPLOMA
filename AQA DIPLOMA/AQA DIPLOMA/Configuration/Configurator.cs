@@ -14,15 +14,13 @@ public class Configurator
     private static AppSettings _appSettings = null!;
     private static IConfiguration Configuration => _configuration.Value;
 
-    public static User Admin => _users.Find(user => user.UserType == UserType.Admin) ??
-                                throw new NullReferenceException("Data not found. Check your appsetting.json file!");
+    public static User Admin =>
+        _users.Find(user => user.UserType == UserType.Admin) ?? throw new NullReferenceException("Data not found. Check your appsetting.json file!");
 
-    public static User User => _users.Find(user => user.UserType == UserType.User) ??
-                               throw new NullReferenceException("Data not found. Check your appsetting.json file!");
+    public static User User =>
+        _users.Find(user => user.UserType == UserType.User) ?? throw new NullReferenceException("Data not found. Check your appsetting.json file!");
 
-    public static AppSettings AppSettings => _appSettings ??
-                                             throw new NullReferenceException(
-                                                 "Data not found. Check your appsetting.json file!");
+    public static AppSettings AppSettings => _appSettings ?? throw new NullReferenceException("Data not found. Check your appsetting.json file!");
 
     static Configurator()
     {
@@ -72,6 +70,7 @@ public class Configurator
         _appSettings = new AppSettings
         {
             BaseUrl = appSettingsSection["BaseUrl"],
+            ApiUrl = appSettingsSection["ApiUrl"],
             BrowserType = appSettingsSection["BrowserType"],
             WaitTimeout = int.Parse(appSettingsSection["WaitTimeout"])
         };
