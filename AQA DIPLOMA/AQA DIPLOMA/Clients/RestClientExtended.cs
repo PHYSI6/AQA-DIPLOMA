@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AQA_DIPLOMA.Configuration;
 using NLog;
 using RestSharp;
+using RestSharp.Authenticators;
 
 namespace AQA_DIPLOMA.Clients;
 
@@ -12,12 +13,12 @@ public sealed class RestClientExtended
     private readonly RestClient _client;
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
     public static RestResponse? LastResponse;
-
+    
     public RestClientExtended()
     {
-        var options = new RestClientOptions(Configurator.AppSettings.BaseUrl ?? throw new InvalidOperationException());
+        var options = new RestClientOptions(Configurator.AppSettings.ApiUrl ?? throw new InvalidOperationException());
         _client = new RestClient(options);
-        _client.Authenticator = new TestLodgeApiAuthentication(Configurator.Admin.Token);
+        _client.Authenticator = new HttpBasicAuthenticator(Configurator.Admin.Email, Configurator.Admin.Token);
     }
 
     public async Task<T> ExecuteAsync<T>(RestRequest request)
