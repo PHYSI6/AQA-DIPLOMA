@@ -1,5 +1,5 @@
 ﻿using AQA_DIPLOMA.Clients;
-using AQA_DIPLOMA.Services;
+using AQA_DIPLOMA.Services.ApiServices;
 using NUnit.Framework;
 
 namespace AQA_DIPLOMA.Tests.Api;

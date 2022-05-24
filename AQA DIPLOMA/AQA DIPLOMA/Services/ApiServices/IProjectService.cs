@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AQA_DIPLOMA.Models;
 
-namespace AQA_DIPLOMA.Services;
+namespace AQA_DIPLOMA.Services.ApiServices;
 
 public interface IProjectService
 {

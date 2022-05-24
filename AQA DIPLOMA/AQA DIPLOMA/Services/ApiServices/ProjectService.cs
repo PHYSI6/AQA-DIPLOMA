@@ -5,11 +5,12 @@ using AQA_DIPLOMA.Clients;
 using AQA_DIPLOMA.Models;
 using RestSharp;
 
-namespace AQA_DIPLOMA.Services;
+namespace AQA_DIPLOMA.Services.ApiServices;
 
 public class ProjectService : IProjectService, IDisposable
 {
     private readonly RestClientExtended _client;
+
     public ProjectService(RestClientExtended client)
     {
         _client = client;
@@ -17,48 +18,36 @@ public class ProjectService : IProjectService, IDisposable
 
     public Task<Project> Show(int projectId)
     {
-        var request = new RestRequest("/projects/{id}.json")
-            .AddUrlSegment("id", projectId);
-        
+        var request = new RestRequest("/projects/{id}.json").AddUrlSegment("id", projectId);
         return _client.ExecuteAsync<Project>(request);
     }
 
     public Task<Projects> List()
     {
         var request = new RestRequest("/projects.json");
-
-        var projects = _client.ExecuteAsync<Projects>(request); 
+        var projects = _client.ExecuteAsync<Projects>(request);
         return projects;
     }
 
     public Task<Project> Create(Project? project)
     {
-        var request = new RestRequest("/projects.json", Method.Post)
-            .AddJsonBody(project);
-        
+        var request = new RestRequest("/projects.json", Method.Post).AddJsonBody(project);
         return _client.ExecuteAsync<Project>(request);
     }
-    
+
     public Task<ErrorResponse> CreateWithInvalidData(Project? project)
     {
-        var request = new RestRequest("/projects.json", Method.Post)
-            .AddJsonBody(project);
-        
+        var request = new RestRequest("/projects.json", Method.Post).AddJsonBody(project);
         return _client.ExecuteAsync<ErrorResponse>(request);
     }
-    
-    
+
     public HttpStatusCode Delete(int projectId)
     {
-        var request = new RestRequest("/projects/{id}.json", Method.Delete)
-            .AddUrlSegment("id", projectId)
+        var request = new RestRequest("/projects/{id}.json", Method.Delete).AddUrlSegment("id", projectId)
             .AddJsonBody("{}");
-        
         return _client.ExecuteAsync(request).Result.StatusCode;
     }
-    
-    
-    
+
     public void Dispose()
     {
         _client.Dispose();
