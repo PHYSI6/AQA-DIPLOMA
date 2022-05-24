@@ -38,7 +38,16 @@ public class ProjectService : IProjectService, IDisposable
         
         return _client.ExecuteAsync<Project>(request);
     }
-
+    
+    public Task<ErrorResponse> CreateWithInvalidData(Project? project)
+    {
+        var request = new RestRequest("/projects.json", Method.Post)
+            .AddJsonBody(project);
+        
+        return _client.ExecuteAsync<ErrorResponse>(request);
+    }
+    
+    
     public HttpStatusCode Delete(int projectId)
     {
         var request = new RestRequest("/projects/{id}.json", Method.Delete)
@@ -47,7 +56,9 @@ public class ProjectService : IProjectService, IDisposable
         
         return _client.ExecuteAsync(request).Result.StatusCode;
     }
-
+    
+    
+    
     public void Dispose()
     {
         _client.Dispose();
