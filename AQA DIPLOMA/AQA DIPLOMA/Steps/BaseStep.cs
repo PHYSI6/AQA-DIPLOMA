@@ -11,7 +11,9 @@ public class BaseStep
     protected LoginNavigatorPage LoginNavigatorPage;
     protected LoginPage LoginPage;
     protected ProjectsPage ProjectsPage;
-
+    protected NewProjectPage NewProjectPage;
+    protected ProjectOverviewPage ProjectOverviewPage;
+    
     public BaseStep(IWebDriver driver)
     {
         _driver = driver;
@@ -19,6 +21,8 @@ public class BaseStep
         LoginNavigatorPage = new LoginNavigatorPage(_driver);
         LoginPage = new LoginPage(_driver);
         ProjectsPage = new ProjectsPage(_driver);
+        NewProjectPage = new NewProjectPage(_driver);
+        ProjectOverviewPage = new ProjectOverviewPage(_driver);
     }
     
     protected IWebDriver Driver
