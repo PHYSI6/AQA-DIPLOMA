@@ -10,12 +10,14 @@ public class BaseTest
 {
     [ThreadStatic] private static IWebDriver _driver;
     protected LoginSteps LoginSteps;
+    protected AddProjectSteps AddProjectSteps;
     
     [SetUp]
     public void SetUp()
     {
         _driver = new BrowserService().Driver;
         LoginSteps = new LoginSteps(_driver);
+        AddProjectSteps = new AddProjectSteps(_driver);
     }
     
     [TearDown]
