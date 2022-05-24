@@ -1,4 +1,6 @@
-﻿using FluentAssertions;
+﻿using System;
+using FluentAssertions;
+using FluentAssertions.Execution;
 using OpenQA.Selenium;
 
 namespace AQA_DIPLOMA.Steps;
@@ -27,7 +29,7 @@ public class LoginSteps : BaseStep
         LoginPage.PageOpened.Should().BeTrue();
     }
 
-    public void InputUsernameAndPassword(string username, string password)
+    public void InputUsernameAndPassword(string? username, string? password)
     {
         LoginPage.UsernameField.SendKeys(username);
         LoginPage.PasswordField.SendKeys(password);
@@ -46,5 +48,17 @@ public class LoginSteps : BaseStep
     public void AuthorizationErrorCheck()
     {
         LoginPage.LoginErrorMessage.Displayed.Should().BeTrue();
+    }
+
+    public void AuthorizationAlertCheck()
+    {
+        IJavaScriptExecutor javaScriptExecutor = (IJavaScriptExecutor) Driver;
+        Boolean isValid = (Boolean)javaScriptExecutor.ExecuteScript("return arguments[0].checkValidity();", LoginPage.UsernameField);
+        String message = (String)javaScriptExecutor.ExecuteScript("return arguments[0].validationMessage;", LoginPage.UsernameField);
+        using (new AssertionScope())
+        {
+            isValid.Should().BeFalse();
+            message.Should().Be("Заполните это поле.");
+        }
     }
 }

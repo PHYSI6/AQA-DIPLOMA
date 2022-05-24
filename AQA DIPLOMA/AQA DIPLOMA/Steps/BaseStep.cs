@@ -1,4 +1,5 @@
-﻿using AQA_DIPLOMA.Pages;
+﻿using System;
+using AQA_DIPLOMA.Pages;
 using OpenQA.Selenium;
 
 namespace AQA_DIPLOMA.Steps;
@@ -18,5 +19,11 @@ public class BaseStep
         LoginNavigatorPage = new LoginNavigatorPage(_driver);
         LoginPage = new LoginPage(_driver);
         ProjectsPage = new ProjectsPage(_driver);
+    }
+    
+    protected IWebDriver Driver
+    {
+        get => _driver;
+        set => _driver = value ?? throw new ArgumentNullException(nameof(value));
     }
 }
