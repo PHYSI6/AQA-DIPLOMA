@@ -2,12 +2,12 @@
 using System.Threading.Tasks;
 using AQA_DIPLOMA.Models;
 
-namespace AQA_DIPLOMA.Services;
+namespace AQA_DIPLOMA.Services.ApiServices;
 
 public interface IProjectService
 {
     Task<Project> Show(int projectId);
     Task<Projects> List();
-    Task<Project> Create(Project project);
+    Task<Project> Create(Project? project);
     HttpStatusCode Delete(int projectId);
 }

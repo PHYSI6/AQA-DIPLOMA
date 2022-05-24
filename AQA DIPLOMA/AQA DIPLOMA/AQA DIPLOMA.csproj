@@ -31,8 +31,4 @@
       </None>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Tests\Api" />
-    </ItemGroup>
-
 </Project>
