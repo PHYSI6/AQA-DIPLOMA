@@ -8,6 +8,6 @@ public interface IProjectService
 {
     Task<Project> Show(int projectId);
     Task<Projects> List();
-    Task<Project> Create(Project project);
+    Task<Project> Create(Project? project);
     HttpStatusCode Delete(int projectId);
 }

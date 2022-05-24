@@ -31,7 +31,7 @@ public class ProjectService : IProjectService, IDisposable
         return projects;
     }
 
-    public Task<Project> Create(Project project)
+    public Task<Project> Create(Project? project)
     {
         var request = new RestRequest("/projects.json", Method.Post)
             .AddJsonBody(project);
