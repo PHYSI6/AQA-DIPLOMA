@@ -3,6 +3,5 @@
 public enum UserType
 {
     Admin,
-    User,
-    Unauthorized
+    User
 }

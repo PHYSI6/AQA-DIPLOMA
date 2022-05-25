@@ -20,9 +20,9 @@ public class AuthorizationTests : BaseTest
         LoginSteps.ClickButtonContinue();
         LoginSteps.AuthorizationSuccessCheck();
     }
-    
+
     [Test]
-    [TestCase("non-existentmail@aqa.by","ilikeaqa")]
+    [TestCase("non-existentmail@aqa.by", "ilikeaqa")]
     [TestCase("\"=\"", "\"=\"")]
     public void Authorization_with_non_existent_data(string username, string password)
     {
@@ -33,7 +33,7 @@ public class AuthorizationTests : BaseTest
         LoginSteps.ClickButtonContinue();
         LoginSteps.AuthorizationErrorCheck();
     }
-    
+
     [Test]
     public void Authorization_with_empty_data()
     {

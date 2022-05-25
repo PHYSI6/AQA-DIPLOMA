@@ -13,22 +13,21 @@ namespace AQA_DIPLOMA.Tests.Ui;
 [AllureNUnit]
 [AllureParentSuite("UI")]
 [AllureSuite("Add a project UI")]
-public class AddNewProjectTests: BaseTest
+public class AddNewProjectTests : BaseTest
 {
     private Project? _project;
     private RestClientExtended _client;
     private ProjectService? _projectService;
 
     [OneTimeSetUp]
-    public void OneTimeSetUp()
+    public void SetUpClientAndServices()
     {
         _client = new RestClientExtended();
         _projectService = new ProjectService(_client);
     }
-    
-    
+
     [Test]
-    [TestCase(1) ,TestCase(149), TestCase(150)]
+    [TestCase(1), TestCase(149), TestCase(150)]
     public void Add_new_project(int lenghtOfProjectName)
     {
         LoginSteps.OpenMainPage();
@@ -38,12 +37,12 @@ public class AddNewProjectTests: BaseTest
         LoginSteps.ClickButtonContinue();
         LoginSteps.AuthorizationSuccessCheck();
         AddProjectSteps.ClickButtonNewProjectOnProjectPage();
-        _project  = new ProjectFaker(lenghtOfProjectName);
+        _project = new ProjectFaker(lenghtOfProjectName);
         AddProjectSteps.InputNewProjectName(_project.Name);
         AddProjectSteps.ClickButtonAddProject();
         AddProjectSteps.ProjectAdditionSuccessCheck();
     }
-    
+
     [Test]
     [TestCase(151, "Name is too long (maximum is 150 characters)")]
     [TestCase(0, "Name can't be blank")]
@@ -56,14 +55,14 @@ public class AddNewProjectTests: BaseTest
         LoginSteps.ClickButtonContinue();
         LoginSteps.AuthorizationSuccessCheck();
         AddProjectSteps.ClickButtonNewProjectOnProjectPage();
-        _project  = new ProjectFaker(lenghtOfProjectName);
+        _project = new ProjectFaker(lenghtOfProjectName);
         AddProjectSteps.InputNewProjectName(_project.Name);
         AddProjectSteps.ClickButtonAddProject();
         AddProjectSteps.ProjectAdditionErrorCheck(errorText);
     }
 
     [TearDown]
-    public void TearDown()
+    public void CleaningUpAddedProjects()
     {
         var listOfProjects = _projectService?.List().Result.ProjectsList;
         if (listOfProjects == null) return;

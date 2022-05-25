@@ -11,7 +11,7 @@ public class BaseTest
     [ThreadStatic] private static IWebDriver _driver;
     protected LoginSteps LoginSteps;
     protected AddProjectSteps AddProjectSteps;
-    
+
     [SetUp]
     public void SetUp()
     {
@@ -19,13 +19,13 @@ public class BaseTest
         LoginSteps = new LoginSteps(_driver);
         AddProjectSteps = new AddProjectSteps(_driver);
     }
-    
+
     [TearDown]
     public void TearDown()
     {
         _driver.Quit();
     }
-    
+
     protected static IWebDriver Driver
     {
         get => _driver;
