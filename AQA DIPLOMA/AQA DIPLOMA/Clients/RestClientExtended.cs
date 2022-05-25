@@ -13,7 +13,7 @@ public sealed class RestClientExtended
     private readonly RestClient _client;
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
     public static RestResponse? LastResponse;
-    
+
     public RestClientExtended()
     {
         var options = new RestClientOptions(Configurator.AppSettings.ApiUrl ?? throw new InvalidOperationException());

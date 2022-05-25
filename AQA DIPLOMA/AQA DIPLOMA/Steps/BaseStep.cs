@@ -13,7 +13,7 @@ public class BaseStep
     protected ProjectsPage ProjectsPage;
     protected NewProjectPage NewProjectPage;
     protected ProjectOverviewPage ProjectOverviewPage;
-    
+
     public BaseStep(IWebDriver driver)
     {
         _driver = driver;
@@ -24,7 +24,7 @@ public class BaseStep
         NewProjectPage = new NewProjectPage(_driver);
         ProjectOverviewPage = new ProjectOverviewPage(_driver);
     }
-    
+
     protected IWebDriver Driver
     {
         get => _driver;

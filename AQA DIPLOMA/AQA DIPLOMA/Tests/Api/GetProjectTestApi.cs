@@ -34,7 +34,7 @@ public class GetProjectTestApi : BaseTestApi
         {
             RestClientExtended.LastResponse?.StatusCode.Should().Be(HttpStatusCode.OK);
             receivedProject?.Name.Should().Be(_project?.Name);
-            receivedProject?.Description.Should().Be(_project.Description);
+            receivedProject?.Description.Should().Be(_project?.Description);
         }
     }
 
