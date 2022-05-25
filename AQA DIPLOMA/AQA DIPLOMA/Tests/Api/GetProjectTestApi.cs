@@ -13,17 +13,18 @@ namespace AQA_DIPLOMA.Tests.Api;
 [AllureNUnit]
 [AllureParentSuite("API")]
 [AllureSuite("Get a project API")]
-public class GetProjectTestApi: BaseTestApi
+public class GetProjectTestApi : BaseTestApi
 {
     private Project? _project;
+
     [OneTimeSetUp]
-    public void OneTimeSetUp()
+    public void CreateRandomProject()
     {
         _project = new ProjectFaker();
         var actualProject = ProjectService?.Create(_project).Result;
         _project = actualProject;
     }
-    
+
     [Test]
     [AllureStep("Request to get a existing project")]
     public void Get_Project()
@@ -38,7 +39,7 @@ public class GetProjectTestApi: BaseTestApi
     }
 
     [OneTimeTearDown]
-    public void OneTimeTearDown()
+    public void DeleteCreatedProject()
     {
         ProjectService?.Delete(_project.Id);
     }

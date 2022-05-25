@@ -14,15 +14,15 @@ namespace AQA_DIPLOMA.Tests.Api;
 public class DeleteProjectTestsApi : BaseTestApi
 {
     private Project? _project;
-    
+
     [OneTimeSetUp]
-    public void OneTimeSetUp()
+    public void CreateRandomProject()
     {
         _project = new ProjectFaker();
         var actualProject = ProjectService?.Create(_project).Result;
         _project = actualProject;
     }
-    
+
     [Test]
     [AllureStep("Request to delete a created project")]
     public void Delete_Existing_Project()
@@ -36,7 +36,7 @@ public class DeleteProjectTestsApi : BaseTestApi
     public void Delete_Non_Existing_Project()
     {
         var nonExisingProjectId = -2;
-        var deleteStatus = ProjectService.Delete(nonExisingProjectId);
+        var deleteStatus = ProjectService!.Delete(nonExisingProjectId);
         deleteStatus.Should().Be(HttpStatusCode.NotFound);
     }
 }

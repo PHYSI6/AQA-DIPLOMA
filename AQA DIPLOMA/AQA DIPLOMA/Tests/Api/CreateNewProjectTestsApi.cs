@@ -16,9 +16,10 @@ namespace AQA_DIPLOMA.Tests.Api;
 public class CreateNewProjectTests : BaseTestApi
 {
     private Project? _project;
+
     [Test]
     [AllureStep("Request to create a project with correct data")]
-    [TestCase(1),TestCase(149), TestCase(150)]
+    [TestCase(1), TestCase(149), TestCase(150)]
     public void Create_New_Project_With_Correct_Data(int lenghtOfProjectName)
     {
         _project = new ProjectFaker(lenghtOfProjectName);
@@ -29,9 +30,10 @@ public class CreateNewProjectTests : BaseTestApi
             actualProject?.Name.Should().Be(_project.Name);
             actualProject?.Description.Should().Be(_project.Description);
         }
+
         _project = actualProject;
     }
-    
+
     [Test]
     [AllureStep("Request to create a project with invalid data")]
     [TestCase(0), TestCase(151)]
@@ -43,7 +45,7 @@ public class CreateNewProjectTests : BaseTestApi
     }
 
     [TearDown]
-    public void TearDown()
+    public void CleaningUpAddedProjects()
     {
         if (_project != null && _project.Id != 0)
         {
