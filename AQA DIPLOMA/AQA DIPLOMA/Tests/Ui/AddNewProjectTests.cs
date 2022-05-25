@@ -1,13 +1,32 @@
-﻿using AQA_DIPLOMA.Configuration;
+﻿using System;
+using AQA_DIPLOMA.Clients;
+using AQA_DIPLOMA.Configuration;
 using AQA_DIPLOMA.Fakers;
 using AQA_DIPLOMA.Models;
+using AQA_DIPLOMA.Services.ApiServices;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 
 namespace AQA_DIPLOMA.Tests.Ui;
 
+[AllureNUnit]
+[AllureParentSuite("UI")]
+[AllureSuite("Add a project UI")]
 public class AddNewProjectTests: BaseTest
 {
     private Project? _project;
+    private RestClientExtended _client;
+    private ProjectService? _projectService;
+
+    [OneTimeSetUp]
+    public void OneTimeSetUp()
+    {
+        _client = new RestClientExtended();
+        _projectService = new ProjectService(_client);
+    }
+    
+    
     [Test]
     [TestCase(1) ,TestCase(149), TestCase(150)]
     public void Add_new_project(int lenghtOfProjectName)
@@ -41,5 +60,14 @@ public class AddNewProjectTests: BaseTest
         AddProjectSteps.InputNewProjectName(_project.Name);
         AddProjectSteps.ClickButtonAddProject();
         AddProjectSteps.ProjectAdditionErrorCheck(errorText);
+    }
+
+    [TearDown]
+    public void TearDown()
+    {
+        var listOfProjects = _projectService?.List().Result.ProjectsList;
+        if (listOfProjects == null) return;
+        var addedProject = Array.Find(listOfProjects, p => p.Name == _project?.Name);
+        if (addedProject != null) _projectService?.Delete(addedProject.Id);
     }
 }
