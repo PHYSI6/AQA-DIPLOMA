@@ -1,8 +1,13 @@
 ﻿using AQA_DIPLOMA.Configuration;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 
 namespace AQA_DIPLOMA.Tests.Ui;
 
+[AllureNUnit]
+[AllureParentSuite("UI")]
+[AllureSuite("Authorization UI")]
 public class AuthorizationTests : BaseTest
 {
     [Test]
