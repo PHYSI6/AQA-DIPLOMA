@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<environment>
+    <parameter>
+        <key>Browser</key>
+        <value>Chrome</value>
+    </parameter>
+    <parameter>
+        <key>Browser Version</key>
+        <value>101.0.4951.67</value>
+    </parameter>
+    <parameter>
+        <key>OS</key>
+        <value>Windows</value>
+    </parameter>
+    <parameter>
+        <key>OS Version</key>
+        <value>10</value>
+    </parameter>
+</environment>
