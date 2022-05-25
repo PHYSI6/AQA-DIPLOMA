@@ -29,7 +29,7 @@ public class CreateNewProjectTests : BaseTestApi
             actualProject?.Name.Should().Be(_project.Name);
             actualProject?.Description.Should().Be(_project.Description);
         }
-        ProjectService?.Delete(actualProject!.Id);
+        _project = actualProject;
     }
     
     [Test]
@@ -40,5 +40,14 @@ public class CreateNewProjectTests : BaseTestApi
         _project = new ProjectFaker(lenghtOfProjectName);
         var actualProject = ProjectService?.CreateWithInvalidData(_project).Result;
         RestClientExtended.LastResponse?.StatusCode.Should().Be(HttpStatusCode.UnprocessableEntity);
+    }
+
+    [TearDown]
+    public void TearDown()
+    {
+        if (_project != null && _project.Id != 0)
+        {
+            ProjectService?.Delete(_project!.Id);
+        }
     }
 }
