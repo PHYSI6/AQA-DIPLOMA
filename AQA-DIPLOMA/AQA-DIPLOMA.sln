@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQA DIPLOMA", "AQA DIPLOMA\AQA DIPLOMA.csproj", "{88FAC85E-C2FE-4859-9B08-134D01822EC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQA-DIPLOMA", "AQA-DIPLOMA\AQA-DIPLOMA.csproj", "{88FAC85E-C2FE-4859-9B08-134D01822EC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

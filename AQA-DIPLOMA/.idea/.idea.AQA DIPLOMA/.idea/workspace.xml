@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b3351cc6-5a73-45fb-a65d-ee7b8d773ec7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AQA DIPLOMA/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AQA DIPLOMA/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AQA DIPLOMA/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AQA DIPLOMA/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA.sln" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/AQA DIPLOMA.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/AQA-DIPLOMA.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Clients/RestClientExtended.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Clients/RestClientExtended.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Configuration/AppSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Configuration/AppSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Configuration/Configurator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Configuration/Configurator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Configuration/Enums/UserType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Configuration/Enums/UserType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Configuration/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Configuration/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Fakers/ProjectFaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Fakers/ProjectFaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Models/ErrorResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Models/ErrorResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Models/Pagination.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Models/Pagination.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Models/Project.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Models/Project.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Models/Projects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Models/Projects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Pages/BasePage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Pages/BasePage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Pages/LoginNavigatorPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Pages/LoginNavigatorPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Pages/LoginPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Pages/LoginPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Pages/MainPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Pages/MainPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Pages/NewProjectPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Pages/NewProjectPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Pages/ProjectOverviewPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Pages/ProjectOverviewPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Pages/ProjectsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Pages/ProjectsPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Services/ApiServices/IProjectService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Services/ApiServices/IProjectService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Services/ApiServices/ProjectService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Services/ApiServices/ProjectService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Services/SeleniumServices/BrowserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Services/SeleniumServices/BrowserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Services/SeleniumServices/DriverFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Services/SeleniumServices/DriverFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Services/SeleniumServices/WaitService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Services/SeleniumServices/WaitService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Steps/AddProjectSteps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Steps/AddProjectSteps.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Steps/BaseStep.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Steps/BaseStep.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Steps/LoginSteps.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Steps/LoginSteps.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Tests/Api/BaseTestApi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Tests/Api/BaseTestApi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Tests/Api/CreateNewProjectTestsApi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Tests/Api/CreateNewProjectTestsApi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Tests/Api/DeleteProjectTestsApi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Tests/Api/DeleteProjectTestsApi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Tests/Api/GetProjectTestApi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Tests/Api/GetProjectTestApi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Tests/Ui/AddNewProjectTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Tests/Ui/AddNewProjectTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Tests/Ui/AuthorizationTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Tests/Ui/AuthorizationTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/Tests/Ui/BaseTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/Tests/Ui/BaseTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/allure-results/categories.json" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/allure-results/categories.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/allure-results/environment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/allure-results/environment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/allureConfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/allureConfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AQA DIPLOMA/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/AQA-DIPLOMA/appsettings.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="XML File" />
+        <option value="JSON File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.nuget/packages/nlog.config/4.7.13/contentFiles/any/any/NLog.config" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1af51483c9bf18871cce649b9f966dd7be686536f998c33bba3c5fc4adea4a0/Task.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4addefb1e79fbe7def610dadfd98060a787c2216743868459b9995d81a829/Reflect.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/685ce156d8e99635e2730eb8820b287ae745d9e8a9b48edfb6941387e3eca/TestMethodCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9a52b594732f8426d3f1d4a85aaebb561a8a1834abe49eea9e1821e6bb682e/SimpleWorkItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b314525519f1b27e1c94253a577de2a24832a6aaaacfe82068889f9ae4f0cd/Faker[T].cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cf95a2cbc284749e32a5e5bd1429f13a4287555cf44cd2f92de32ef7e72fe35/ArgumentNullException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cfc0df986b6218dbded2fe8e325a37a54ca2a521f40872a9b314477fb6a585/SetUpTearDownItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f52b9d49264ef126bd48babdd8cc869dc58a767b364e767a9a1590a4916fd3/MethodWrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/AQA-DIPLOMA/AQA DIPLOMA/AQA DIPLOMA/Tests/Ui/AuthorizationTests.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29QXv4Rcapkv2eiQlmTCWojAeeD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3351cc6-5a73-45fb-a65d-ee7b8d773ec7" name="Changes" comment="" />
+      <created>1653046511743</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653046511743</updated>
+      <workItem from="1653046523468" duration="24108000" />
+      <workItem from="1653332012333" duration="5791000" />
+      <workItem from="1653381336013" duration="25423000" />
+      <workItem from="1653415500271" duration="22114000" />
+      <workItem from="1653640082712" duration="1342000" />
+    </task>
+    <task id="LOCAL-00001" summary="NO-CASE: Implemented Configuration">
+      <created>1653048882350</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653048882350</updated>
+    </task>
+    <task id="LOCAL-00002" summary="NO-CASE: Implemented Services">
+      <created>1653049778245</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653049778245</updated>
+    </task>
+    <task id="LOCAL-00003" summary="NO-CASE: Implemented test pages">
+      <created>1653062426697</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653062426697</updated>
+    </task>
+    <task id="LOCAL-00004" summary="NO-CASE: Implemented Clients">
+      <created>1653065316464</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653065316464</updated>
+    </task>
+    <task id="LOCAL-00005" summary="NO-CASE: Implemented Models">
+      <created>1653068068452</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1653068068452</updated>
+    </task>
+    <task id="LOCAL-00006" summary="NO-CASE: Fixed Clients and Configuration for API">
+      <created>1653075178566</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1653075178566</updated>
+    </task>
+    <task id="LOCAL-00007" summary="NO-CASE: Implemented Project Services">
+      <created>1653077079243</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653077079243</updated>
+    </task>
+    <task id="LOCAL-00008" summary="NO-CASE: Added field in model Projects">
+      <created>1653077120254</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1653077120254</updated>
+    </task>
+    <task id="LOCAL-00009" summary="NO-CASE: Implemented Faker class for Project">
+      <created>1653081354597</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1653081354597</updated>
+    </task>
+    <task id="LOCAL-00010" summary="NO-CASE: Services are distributed by purpose">
+      <created>1653081571066</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1653081571066</updated>
+    </task>
+    <task id="LOCAL-00011" summary="CASE-03: Fixed url in appsettings.json">
+      <created>1653336411183</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1653336411183</updated>
+    </task>
+    <task id="LOCAL-00012" summary="CASE-03: Included Fluent Assertions in project">
+      <created>1653336483589</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1653336483589</updated>
+    </task>
+    <task id="LOCAL-00013" summary="CASE-03: Implemented Login- and BaseStep classes">
+      <created>1653337161589</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1653337161589</updated>
+    </task>
+    <task id="LOCAL-00014" summary="CASE-03: Implemented BaseTest for UI testing">
+      <created>1653337240469</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1653337240469</updated>
+    </task>
+    <task id="LOCAL-00015" summary="CASE-03: Added &quot;Login error message&quot; to LoginPage">
+      <created>1653337358690</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1653337358690</updated>
+    </task>
+    <task id="LOCAL-00016" summary="CASE-03: Fixed steps">
+      <created>1653385493335</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1653385493335</updated>
+    </task>
+    <task id="LOCAL-00017" summary="CASE-03: Implemented authorization tests">
+      <created>1653385725248</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1653385725248</updated>
+    </task>
+    <task id="LOCAL-00018" summary="CASE-06: Added some changes to pre-created classes">
+      <created>1653389809705</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1653389809705</updated>
+    </task>
+    <task id="LOCAL-00019" summary="CASE-06: Implemented steps for project addition">
+      <created>1653389955975</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1653389955975</updated>
+    </task>
+    <task id="LOCAL-00020" summary="CASE-06: Implemented new project addition tests">
+      <created>1653391779710</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1653391779710</updated>
+    </task>
+    <task id="LOCAL-00021" summary="CASE-04: Fixed project type in services">
+      <created>1653394069967</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1653394069967</updated>
+    </task>
+    <task id="LOCAL-00022" summary="CASE-04: Deleted unuseful folder">
+      <created>1653394113764</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1653394113764</updated>
+    </task>
+    <task id="LOCAL-00023" summary="CASE-04: Implemented BaseTest class for API">
+      <created>1653394160989</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1653394160989</updated>
+    </task>
+    <task id="LOCAL-00024" summary="CASE-04: Implemented new model for error response">
+      <created>1653407649654</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1653407649654</updated>
+    </task>
+    <task id="LOCAL-00025" summary="CASE-04: Added new method for project creation with invalid data">
+      <created>1653407735758</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1653407735758</updated>
+    </task>
+    <task id="LOCAL-00026" summary="CASE-04: Implemented tests for project creation API">
+      <created>1653407840709</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1653407840709</updated>
+    </task>
+    <task id="LOCAL-00027" summary="CASE-04: Fixed namespaces in classes">
+      <created>1653408789956</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1653408789956</updated>
+    </task>
+    <task id="LOCAL-00028" summary="CASE-05: Modified project faker class">
+      <created>1653411984014</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1653411984014</updated>
+    </task>
+    <task id="LOCAL-00029" summary="CASE-05: Implemented test for project deletion API">
+      <created>1653412047142</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1653412047142</updated>
+    </task>
+    <task id="LOCAL-00030" summary="CASE-05: Implemented project receipt test API">
+      <created>1653413655195</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1653413655195</updated>
+    </task>
+    <task id="LOCAL-00031" summary="NO-CASE: Added allure to the project">
+      <created>1653416625138</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1653416625138</updated>
+    </task>
+    <task id="LOCAL-00032" summary="NO-CASE: Wait timeout reduced to 30 seconds">
+      <created>1653474672082</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1653474672082</updated>
+    </task>
+    <task id="LOCAL-00033" summary="NO-CASE: Included allure to the project">
+      <created>1653474852023</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1653474852023</updated>
+    </task>
+    <task id="LOCAL-00034" summary="NO-CASE: Added allure attributes to the project">
+      <created>1653474898860</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1653474898860</updated>
+    </task>
+    <task id="LOCAL-00035" summary="NO-CASE: Implemented postcondition">
+      <created>1653484985010</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1653484985010</updated>
+    </task>
+    <task id="LOCAL-00036" summary="NO-CASE: Added names to setup and teardown methods">
+      <created>1653486859166</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1653486859166</updated>
+    </task>
+    <task id="LOCAL-00037" summary="NO-CASE: Fixed spacing between lines">
+      <created>1653490646358</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1653490646358</updated>
+    </task>
+    <task id="LOCAL-00038" summary="NO-CASE: Added categories and environment files for allure">
+      <created>1653493747654</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1653493747654</updated>
+    </task>
+    <task id="LOCAL-00039" summary="NO-CASE: Added property &quot;copy always&quot; to categories and environment">
+      <created>1653494063019</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1653494063019</updated>
+    </task>
+    <task id="LOCAL-00040" summary="NO-CASE: Changed spaces in environment">
+      <created>1653494222812</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1653494222812</updated>
+    </task>
+    <task id="LOCAL-00041" summary="NO-CASE: Added tms links to tests">
+      <created>1653640180862</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1653640180862</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="CASE-03: Implemented authorization tests" />
+    <MESSAGE value="CASE-06: Added some changes to pre-created classes" />
+    <MESSAGE value="CASE-06: Implemented steps for project addition" />
+    <MESSAGE value="CASE-06: Implemented new project addition tests" />
+    <MESSAGE value="CASE-04: Fixed project type in services" />
+    <MESSAGE value="CASE-04: Deleted unuseful folder" />
+    <MESSAGE value="CASE-04: Implemented BaseTest class for API" />
+    <MESSAGE value="CASE-04: Implemented new model for error response" />
+    <MESSAGE value="CASE-04: Added new method for project creation with invalid data" />
+    <MESSAGE value="CASE-04: Implemented tests for project creation API" />
+    <MESSAGE value="CASE-04: Fixed namespaces in classes" />
+    <MESSAGE value="CASE-05: Modified project faker class" />
+    <MESSAGE value="CASE-05: Implemented test for project deletion API" />
+    <MESSAGE value="CASE-05: Implemented project receipt test API" />
+    <MESSAGE value="NO-CASE: Added allure to the project" />
+    <MESSAGE value="NO-CASE: Wait timeout reduced to 30 seconds" />
+    <MESSAGE value="NO-CASE: Included allure to the project" />
+    <MESSAGE value="NO-CASE: Added allure attributes to the project" />
+    <MESSAGE value="NO-CASE: Implemented postcondition" />
+    <MESSAGE value="NO-CASE: Added names to setup and teardown methods" />
+    <MESSAGE value="NO-CASE: Fixed spacing between lines" />
+    <MESSAGE value="NO-CASE: Added categories and environment files for allure" />
+    <MESSAGE value="NO-CASE: Added property &quot;copy always&quot; to categories and environment" />
+    <MESSAGE value="NO-CASE: Changed spaces in environment" />
+    <MESSAGE value="NO-CASE: Added tms links to tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="NO-CASE: Added tms links to tests" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#AQA_DIPLOMA.Models.Project" memberName="Id" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>
