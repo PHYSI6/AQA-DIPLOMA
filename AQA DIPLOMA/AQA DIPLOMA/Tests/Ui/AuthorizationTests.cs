@@ -24,6 +24,7 @@ public class AuthorizationTests : BaseTest
     [Test]
     [TestCase("non-existentmail@aqa.by", "ilikeaqa")]
     [TestCase("\"=\"", "\"=\"")]
+    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
     public void Authorization_with_non_existent_data(string username, string password)
     {
         LoginSteps.OpenMainPage();
@@ -35,6 +36,7 @@ public class AuthorizationTests : BaseTest
     }
 
     [Test]
+    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
     public void Authorization_with_empty_data()
     {
         LoginSteps.OpenMainPage();

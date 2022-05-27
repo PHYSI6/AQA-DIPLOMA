@@ -19,6 +19,7 @@ public class CreateNewProjectTests : BaseTestApi
 
     [Test]
     [AllureStep("Request to create a project with correct data")]
+    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
     [TestCase(1), TestCase(149), TestCase(150)]
     public void Create_New_Project_With_Correct_Data(int lenghtOfProjectName)
     {
@@ -36,6 +37,7 @@ public class CreateNewProjectTests : BaseTestApi
 
     [Test]
     [AllureStep("Request to create a project with invalid data")]
+    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
     [TestCase(0), TestCase(151)]
     public void Create_New_Project_With_Invalid_Data(int lenghtOfProjectName)
     {

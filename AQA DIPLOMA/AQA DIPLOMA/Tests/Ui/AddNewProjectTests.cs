@@ -28,6 +28,7 @@ public class AddNewProjectTests : BaseTest
 
     [Test]
     [TestCase(1), TestCase(149), TestCase(150)]
+    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
     public void Add_new_project(int lenghtOfProjectName)
     {
         LoginSteps.OpenMainPage();
@@ -46,6 +47,7 @@ public class AddNewProjectTests : BaseTest
     [Test]
     [TestCase(151, "Name is too long (maximum is 150 characters)")]
     [TestCase(0, "Name can't be blank")]
+    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
     public void Add_new_proj(int lenghtOfProjectName, string errorText)
     {
         LoginSteps.OpenMainPage();
