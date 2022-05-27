@@ -25,6 +25,7 @@ public class DeleteProjectTestsApi : BaseTestApi
 
     [Test]
     [AllureStep("Request to delete a created project")]
+    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
     public void Delete_Existing_Project()
     {
         var deleteStatus = ProjectService.Delete(_project.Id);
@@ -33,6 +34,7 @@ public class DeleteProjectTestsApi : BaseTestApi
 
     [Test]
     [AllureStep("Request to delete a non-existing project")]
+    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
     public void Delete_Non_Existing_Project()
     {
         var nonExisingProjectId = -2;

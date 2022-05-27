@@ -27,6 +27,7 @@ public class GetProjectTestApi : BaseTestApi
 
     [Test]
     [AllureStep("Request to get a existing project")]
+    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
     public void Get_Project()
     {
         var receivedProject = ProjectService?.Show(_project.Id).Result;
