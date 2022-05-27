@@ -13,61 +13,77 @@ public class LoginSteps : BaseStep
     }
     
     [AllureStep("Open main TestLodge page")]
-    public void OpenMainPage()
+    public LoginSteps OpenMainPage()
     {
         MainPage.OpenPage();
         MainPage.PageOpened.Should().BeTrue();
+
+        return this;
     }
     
     [AllureStep("Click button \"Login\" at the top of the page")]
-    public void ClickButtonLoginOnMainPage()
+    public LoginSteps ClickButtonLoginOnMainPage()
     {
         MainPage.ButtonLogin.Click();
         LoginNavigatorPage.PageOpened.Should().BeTrue();
+
+        return this;
     }
     
     [AllureStep("On the opened page click button \"Login\"")]
-    public void ClickButtonLoginOnNavigatorPage()
+    public LoginSteps ClickButtonLoginOnNavigatorPage()
     {
         LoginNavigatorPage.LoginButton.Click();
         LoginPage.PageOpened.Should().BeTrue();
+
+        return this;
     }
     
     [AllureStep("In the authorization form that appears, enter login {0} and password {1}")]
-    public void InputUsernameAndPassword(string? username, string? password)
+    public LoginSteps InputUsernameAndPassword(string? username, string? password)
     {
         LoginPage.UsernameField.SendKeys(username);
         LoginPage.PasswordField.SendKeys(password);
+
+        return this;
     }
     
     [AllureStep("Click button \"Continue\"")]
-    public void ClickButtonContinue()
+    public LoginSteps ClickButtonContinue()
     {
         LoginPage.ContinueButton.Click();
+
+        return this;
     }
     
     [AllureStep("Authorization success check")]
-    public void AuthorizationSuccessCheck()
+    public LoginSteps AuthorizationSuccessCheck()
     {
         ProjectsPage.PageOpened.Should().BeTrue();
+
+        return this;
     }
     
     [AllureStep("Checking for an authorization error")]
-    public void AuthorizationErrorCheck()
+    public LoginSteps AuthorizationErrorCheck()
     {
         LoginPage.LoginErrorMessage.Displayed.Should().BeTrue();
+
+        return this;
     }
     
     [AllureStep("Checking for an alert availability")]
-    public void AuthorizationAlertCheck()
+    public LoginSteps AuthorizationAlertCheck()
     {
         IJavaScriptExecutor javaScriptExecutor = (IJavaScriptExecutor) Driver;
-        Boolean isValid = (Boolean)javaScriptExecutor.ExecuteScript("return arguments[0].checkValidity();", LoginPage.UsernameField);
-        String message = (String)javaScriptExecutor.ExecuteScript("return arguments[0].validationMessage;", LoginPage.UsernameField);
+        bool isValid = (Boolean)javaScriptExecutor.ExecuteScript("return arguments[0].checkValidity();", LoginPage.UsernameField);
+        string message = (String)javaScriptExecutor.ExecuteScript("return arguments[0].validationMessage;", LoginPage.UsernameField);
         using (new AssertionScope())
         {
             isValid.Should().BeFalse();
             message.Should().Be("Заполните это поле.");
         }
+
+        return this;
     }
 }

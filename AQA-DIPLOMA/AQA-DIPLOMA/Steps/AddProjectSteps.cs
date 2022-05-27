@@ -12,36 +12,44 @@ public class AddProjectSteps : BaseStep
     }
 
     [AllureStep("Click button \"New project\"")]
-    public void ClickButtonNewProjectOnProjectPage()
+    public AddProjectSteps ClickButtonNewProjectOnProjectPage()
     {
         ProjectsPage.NewProjectButton.Click();
         NewProjectPage.PageOpened.Should().BeTrue();
+
+        return this;
     }
 
-    [AllureStep("Enter in \"Name\" field")]
-    public void InputNewProjectName(string? name)
+    [AllureStep("Enter name {0} in \"Name\" field")]
+    public AddProjectSteps InputNewProjectName(string? name)
     {
         NewProjectPage.ProjectName.SendKeys(name);
+        
+        return this;
     }
 
     [AllureStep("Click button \"Add project\"")]
-    public void ClickButtonAddProject()
+    public AddProjectSteps ClickButtonAddProject()
     {
         NewProjectPage.ButtonAddProject.Click();
+        
+        return this;
     }
 
     [AllureStep("Project addition success check")]
-    public void ProjectAdditionSuccessCheck()
+    public AddProjectSteps ProjectAdditionSuccessCheck()
     {
         using (new AssertionScope())
         {
             ProjectOverviewPage.PageOpened.Should().BeTrue();
             ProjectOverviewPage.ProjectCreationStatus.Text.Should().Be("Project was successfully created.");
         }
+        
+        return this;
     }
 
     [AllureStep("Project addition error check")]
-    public void ProjectAdditionErrorCheck(string errorMessage)
+    public AddProjectSteps ProjectAdditionErrorCheck(string errorMessage)
     {
         using (new AssertionScope())
         {
@@ -49,5 +57,7 @@ public class AddProjectSteps : BaseStep
             NewProjectPage.ErrorMessage.Displayed.Should().BeTrue();
             NewProjectPage.ErrorMessageText.Text.Should().Be(errorMessage);
         }
+        
+        return this;
     }
 }

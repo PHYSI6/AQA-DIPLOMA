@@ -13,19 +13,21 @@ namespace AQA_DIPLOMA.Tests.Api;
 [AllureSuite("Delete a project API")]
 public class DeleteProjectTestsApi : BaseTestApi
 {
-    private Project? _project;
+    private Project _project = null!;
 
     [OneTimeSetUp]
     public void CreateRandomProject()
     {
         _project = new ProjectFaker();
-        var actualProject = ProjectService?.Create(_project).Result;
+        var actualProject = ProjectService.Create(_project).Result;
         _project = actualProject;
     }
 
     [Test]
+    [Category("Positive")]
+    [AllureName("Delete a created project")]
     [AllureStep("Request to delete a created project")]
-    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
+    [AllureTms("TMS", "expand_section=340958#case_3572024")]
     public void Delete_Existing_Project()
     {
         var deleteStatus = ProjectService.Delete(_project.Id);
@@ -33,12 +35,16 @@ public class DeleteProjectTestsApi : BaseTestApi
     }
 
     [Test]
+    [Category("Negative")]
+    [AllureName("Delete a non-existing project")]
     [AllureStep("Request to delete a non-existing project")]
-    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
+    [AllureTms("TMS", "expand_section=340958#case_3572024")]
     public void Delete_Non_Existing_Project()
     {
-        var nonExisingProjectId = -2;
-        var deleteStatus = ProjectService!.Delete(nonExisingProjectId);
+        var impossibleId = -2;
+        
+        var deleteStatus = ProjectService.Delete(impossibleId);
+        
         deleteStatus.Should().Be(HttpStatusCode.NotFound);
     }
 }

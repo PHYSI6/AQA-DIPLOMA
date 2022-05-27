@@ -6,7 +6,7 @@ namespace AQA_DIPLOMA.Tests.Api;
 
 public class BaseTestApi
 {
-    protected ProjectService? ProjectService;
+    protected ProjectService ProjectService = null!;
 
     [OneTimeSetUp]
     public void OneTimeSetUpApi()

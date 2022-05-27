@@ -15,43 +15,48 @@ namespace AQA_DIPLOMA.Tests.Api;
 [AllureSuite("Create a new project API")]
 public class CreateNewProjectTests : BaseTestApi
 {
-    private Project? _project;
+    private Project _project = null!;
 
     [Test]
-    [AllureStep("Request to create a project with correct data")]
-    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
+    [Category("Positive")]
+    [AllureName("Create a new project with an acceptable lenght of name")]
+    [AllureStep("Request to create a project with lenght of name {0}")]
+    [AllureTms("TMS", "expand_section=340958#case_3572017")]
     [TestCase(1), TestCase(149), TestCase(150)]
     public void Create_New_Project_With_Correct_Data(int lenghtOfProjectName)
     {
-        _project = new ProjectFaker(lenghtOfProjectName);
-        var actualProject = ProjectService?.Create(_project).Result;
+        _project = new ProjectFaker(lenghtOfProjectName).Generate();
+        var actualProject = ProjectService.Create(_project).Result;
+        
         using (new AssertionScope())
         {
-            RestClientExtended.LastResponse?.StatusCode.Should().Be(HttpStatusCode.Created);
-            actualProject?.Name.Should().Be(_project.Name);
-            actualProject?.Description.Should().Be(_project.Description);
+            RestClientExtended.LastResponse.StatusCode.Should().Be(HttpStatusCode.Created);
+            actualProject.Name.Should().Be(_project.Name);
+            actualProject.Description.Should().Be(_project.Description);
         }
 
         _project = actualProject;
     }
 
     [Test]
-    [AllureStep("Request to create a project with invalid data")]
-    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
+    [Category("Negative")]
+    [AllureName("Create a new project with an invalid lenght of name")]
+    [AllureStep("Request to create a project with lenght of name {0}")]
+    [AllureTms("TMS", "expand_section=340958#case_3572017")]
     [TestCase(0), TestCase(151)]
     public void Create_New_Project_With_Invalid_Data(int lenghtOfProjectName)
     {
-        _project = new ProjectFaker(lenghtOfProjectName);
-        var actualProject = ProjectService?.CreateWithInvalidData(_project).Result;
-        RestClientExtended.LastResponse?.StatusCode.Should().Be(HttpStatusCode.UnprocessableEntity);
+        _project = new ProjectFaker(lenghtOfProjectName).Generate();
+        ProjectService.CreateWithInvalidData(_project).Wait();
+        RestClientExtended.LastResponse.StatusCode.Should().Be(HttpStatusCode.UnprocessableEntity);
     }
 
     [TearDown]
     public void CleaningUpAddedProjects()
     {
-        if (_project != null && _project.Id != 0)
+        if ( _project.Id != 0)
         {
-            ProjectService?.Delete(_project!.Id);
+            ProjectService.Delete(_project.Id);
         }
     }
 }

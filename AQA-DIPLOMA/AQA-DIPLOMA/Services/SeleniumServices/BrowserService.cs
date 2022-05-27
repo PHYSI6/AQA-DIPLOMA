@@ -2,15 +2,16 @@
 using AQA_DIPLOMA.Configuration;
 using OpenQA.Selenium;
 
-namespace AQA_DIPLOMA.Services;
+namespace AQA_DIPLOMA.Services.SeleniumServices;
 
 public class BrowserService
 {
-    private IWebDriver _driver;
+    private IWebDriver _driver = null!;
+    
     public IWebDriver Driver
     {
         get => _driver;
-        set => _driver = value;
+        private set => _driver = value;
     }
 
     public BrowserService()
@@ -19,7 +20,7 @@ public class BrowserService
         {
             "chrome" => new DriverFactory().GetChromeDriver(),
             "firefox" => new DriverFactory().GetFirefoxDriver(),
-            _ => Driver
+            _ => throw new ArgumentException("Browser type was not found!")
         };
         Driver.Manage().Window.Maximize();
         Driver.Manage().Cookies.DeleteAllCookies();
