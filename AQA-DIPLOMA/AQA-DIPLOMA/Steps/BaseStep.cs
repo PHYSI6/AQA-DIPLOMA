@@ -17,6 +17,7 @@ public class BaseStep
     public BaseStep(IWebDriver driver)
     {
         _driver = driver;
+        
         MainPage = new MainPage(_driver);
         LoginNavigatorPage = new LoginNavigatorPage(_driver);
         LoginPage = new LoginPage(_driver);

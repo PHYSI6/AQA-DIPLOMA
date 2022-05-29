@@ -12,6 +12,7 @@ public class BaseTestApi
     public void OneTimeSetUpApi()
     {
         var restClient = new RestClientExtended();
+        
         ProjectService = new ProjectService(restClient);
     }
 }

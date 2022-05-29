@@ -18,7 +18,7 @@ public class DeleteProjectTestsApi : BaseTestApi
     [OneTimeSetUp]
     public void CreateRandomProject()
     {
-        _project = new ProjectFaker();
+        _project = new ProjectFaker().Generate();
         var actualProject = ProjectService.Create(_project).Result;
         _project = actualProject;
     }

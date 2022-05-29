@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using AQA_DIPLOMA.Configuration;
 using NLog;
@@ -28,7 +29,8 @@ public class RestClientExtended
         LastResponse = response;
         LogResponse(response);
         
-        return response.Data ?? throw new InvalidOperationException(); // уточнить
+        return response.Data ?? throw  new SerializationException(
+            "Response deserialization error!", response.ErrorException);
     }
 
     public async Task<RestResponse> ExecuteAsync(RestRequest request)

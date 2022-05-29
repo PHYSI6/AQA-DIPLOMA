@@ -76,8 +76,13 @@ public class LoginSteps : BaseStep
     public LoginSteps AuthorizationAlertCheck()
     {
         IJavaScriptExecutor javaScriptExecutor = (IJavaScriptExecutor) Driver;
-        bool isValid = (Boolean)javaScriptExecutor.ExecuteScript("return arguments[0].checkValidity();", LoginPage.UsernameField);
-        string message = (String)javaScriptExecutor.ExecuteScript("return arguments[0].validationMessage;", LoginPage.UsernameField);
+        
+        bool isValid = (Boolean)javaScriptExecutor.ExecuteScript
+            ("return arguments[0].checkValidity();", LoginPage.UsernameField);
+        
+        string message = (String)javaScriptExecutor.ExecuteScript
+            ("return arguments[0].validationMessage;", LoginPage.UsernameField);
+        
         using (new AssertionScope())
         {
             isValid.Should().BeFalse();
