@@ -27,8 +27,8 @@ public class AuthorizationTestsUi : BaseTestUi
     [Test]
     [Category("Negative")]
     [AllureName("Authorization with non-existent login and password")]
-    [TestCase("non-existentmail@aqa.by", "ilikeaqa")]
-    [TestCase("\"=\"", "\"=\"")]
+    [TestCase("uncorrectmail", "uncorrectpassword")]
+    [TestCase("\" = \"", "\" = \"")]
     [AllureTms("TMS", "expand_section=338413#case_3571834")]
     public void Authorization_with_non_existent_data(string username, string password)
     {
@@ -42,7 +42,7 @@ public class AuthorizationTestsUi : BaseTestUi
 
     [Test]
     [AllureName("Authorization with empty login and password")]
-    [TestCase("", "")]
+    [TestCase(" ", " ")]
     [Category("Negative")]
     [AllureTms("TMS", "expand_section=338413#case_3571834")]
     public void Authorization_with_empty_data(string username, string password)
