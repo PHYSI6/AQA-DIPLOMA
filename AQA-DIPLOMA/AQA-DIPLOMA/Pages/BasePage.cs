@@ -1,4 +1,5 @@
 ﻿using AQA_DIPLOMA.Services;
+using AQA_DIPLOMA.Services.SeleniumServices;
 using OpenQA.Selenium;
 
 namespace AQA_DIPLOMA.Pages;
@@ -6,7 +7,10 @@ namespace AQA_DIPLOMA.Pages;
 public abstract class BasePage
 {
     protected IWebDriver Driver { get; }
+    
     protected WaitService WaitService { get; }
+    
+    public bool PageOpened => WaitService.WaitElementIsExists(GetPageIdentifier()).Displayed;
 
     protected BasePage(IWebDriver driver)
     {
@@ -15,5 +19,4 @@ public abstract class BasePage
     }
 
     protected abstract By GetPageIdentifier();
-    public bool PageOpened => WaitService.WaitElementIsExists(GetPageIdentifier()).Displayed;
 }

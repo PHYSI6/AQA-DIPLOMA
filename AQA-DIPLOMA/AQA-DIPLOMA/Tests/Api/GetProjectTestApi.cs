@@ -15,33 +15,35 @@ namespace AQA_DIPLOMA.Tests.Api;
 [AllureSuite("Get a project API")]
 public class GetProjectTestApi : BaseTestApi
 {
-    private Project? _project;
+    private Project _project = null!;
 
     [OneTimeSetUp]
     public void CreateRandomProject()
     {
-        _project = new ProjectFaker();
-        var actualProject = ProjectService?.Create(_project).Result;
+        _project = new ProjectFaker().Generate();
+        var actualProject = ProjectService.Create(_project).Result;
         _project = actualProject;
     }
 
     [Test]
+    [AllureName("Get a existing project")]
     [AllureStep("Request to get a existing project")]
-    [AllureTms("TMS", "/a/32159/projects/48292/suites/205720")]
+    [AllureTms("TMS", "expand_section=340958#case_3572067")]
     public void Get_Project()
     {
-        var receivedProject = ProjectService?.Show(_project.Id).Result;
+        var receivedProject = ProjectService.Show(_project.Id).Result;
+        
         using (new AssertionScope())
         {
-            RestClientExtended.LastResponse?.StatusCode.Should().Be(HttpStatusCode.OK);
-            receivedProject?.Name.Should().Be(_project?.Name);
-            receivedProject?.Description.Should().Be(_project?.Description);
+            RestClientExtended.LastResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+            receivedProject.Name.Should().Be(_project.Name);
+            receivedProject.Description.Should().Be(_project.Description);
         }
     }
 
     [OneTimeTearDown]
     public void DeleteCreatedProject()
     {
-        ProjectService?.Delete(_project.Id);
+        ProjectService.Delete(_project.Id);
     }
 }

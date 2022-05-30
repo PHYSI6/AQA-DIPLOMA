@@ -2,7 +2,7 @@
   "allure": {
     "directory": "..\\..\\..\\allure-results",
     "links": [
-      "https://app.testlodge.com{TMS}"
+      "https://app.testlodge.com/a/32159/projects/48292/suites/205720?{TMS}"
     ]
   }
 }

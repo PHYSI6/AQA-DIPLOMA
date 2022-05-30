@@ -2,7 +2,7 @@
 
 namespace AQA_DIPLOMA.Models;
 
-public class ErrorResponse
+public record ErrorResponse
 {
     [JsonPropertyName("name")] public string[]? Name { get; set; }
 }

@@ -16,10 +16,7 @@ public class Configurator
 
     public static User Admin => _users.Find(user => user.UserType == UserType.Admin) ??
                                 throw new NullReferenceException("Data not found. Check your appsetting.json file!");
-
-    public static User User => _users.Find(user => user.UserType == UserType.User) ??
-                               throw new NullReferenceException("Data not found. Check your appsetting.json file!");
-
+    
     public static AppSettings AppSettings => _appSettings ??
                                              throw new NullReferenceException(
                                                  "Data not found. Check your appsetting.json file!");
@@ -35,11 +32,6 @@ public class Configurator
     {
         var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         var builder = new ConfigurationBuilder().SetBasePath(basePath).AddJsonFile("appsettings.json");
-        var appSettingFiles = Directory.EnumerateFiles(basePath ?? string.Empty, "appsettings.*.json");
-        foreach (var appSettingFile in appSettingFiles)
-        {
-            builder.AddJsonFile(appSettingFile);
-        }
 
         return builder.Build();
     }
@@ -59,7 +51,6 @@ public class Configurator
             user.UserType = usersArrayMember["UserType"]?.ToLower() switch
             {
                 "admin" => UserType.Admin,
-                "user" => UserType.User,
                 _ => user.UserType
             };
             _users.Add(user);
@@ -74,7 +65,7 @@ public class Configurator
             BaseUrl = appSettingsSection["BaseUrl"],
             ApiUrl = appSettingsSection["ApiUrl"],
             BrowserType = appSettingsSection["BrowserType"],
-            WaitTimeout = int.Parse(appSettingsSection["WaitTimeout"])
+            WaitTimeout = int.Parse(appSettingsSection["WaitTimeout"]!)
         };
     }
 }

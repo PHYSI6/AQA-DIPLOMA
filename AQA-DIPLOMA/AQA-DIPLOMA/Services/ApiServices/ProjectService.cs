@@ -18,33 +18,41 @@ public class ProjectService : IProjectService, IDisposable
 
     public Task<Project> Show(int projectId)
     {
-        var request = new RestRequest("/projects/{id}.json").AddUrlSegment("id", projectId);
+        var request = new RestRequest("/projects/{id}.json")
+            .AddUrlSegment("id", projectId);
+        
         return _client.ExecuteAsync<Project>(request);
     }
 
     public Task<Projects> List()
     {
         var request = new RestRequest("/projects.json");
-        var projects = _client.ExecuteAsync<Projects>(request);
-        return projects;
+
+        return _client.ExecuteAsync<Projects>(request);
     }
 
     public Task<Project> Create(Project? project)
     {
-        var request = new RestRequest("/projects.json", Method.Post).AddJsonBody(project);
+        var request = new RestRequest("/projects.json", Method.Post)
+            .AddJsonBody(project);
+        
         return _client.ExecuteAsync<Project>(request);
     }
 
     public Task<ErrorResponse> CreateWithInvalidData(Project? project)
     {
-        var request = new RestRequest("/projects.json", Method.Post).AddJsonBody(project);
+        var request = new RestRequest("/projects.json", Method.Post)
+            .AddJsonBody(project);
+        
         return _client.ExecuteAsync<ErrorResponse>(request);
     }
 
     public HttpStatusCode Delete(int projectId)
     {
-        var request = new RestRequest("/projects/{id}.json", Method.Delete).AddUrlSegment("id", projectId)
+        var request = new RestRequest("/projects/{id}.json", Method.Delete)
+            .AddUrlSegment("id", projectId)
             .AddJsonBody("{}");
+        
         return _client.ExecuteAsync(request).Result.StatusCode;
     }
 
