@@ -35,7 +35,19 @@ public class Configurator
 
         return builder.Build();
     }
-
+    
+    private static void BuildAppSettings()
+    {
+        var appSettingsSection = Configuration.GetSection(nameof(AppSettings));
+        _appSettings = new AppSettings
+        {
+            BaseUrl = appSettingsSection["BaseUrl"],
+            ApiUrl = appSettingsSection["ApiUrl"],
+            BrowserType = appSettingsSection["BrowserType"],
+            WaitTimeout = int.Parse(appSettingsSection["WaitTimeout"]!)
+        };
+    }
+    
     private static void BuildUsersList()
     {
         var usersSection = Configuration.GetSection(nameof(User));
@@ -57,15 +69,5 @@ public class Configurator
         }
     }
 
-    private static void BuildAppSettings()
-    {
-        var appSettingsSection = Configuration.GetSection(nameof(AppSettings));
-        _appSettings = new AppSettings
-        {
-            BaseUrl = appSettingsSection["BaseUrl"],
-            ApiUrl = appSettingsSection["ApiUrl"],
-            BrowserType = appSettingsSection["BrowserType"],
-            WaitTimeout = int.Parse(appSettingsSection["WaitTimeout"]!)
-        };
-    }
+    
 }
