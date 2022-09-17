@@ -16,35 +16,35 @@ public class ProjectService : IDisposable
         _client = client;
     }
 
-    public Task<Project> Show(int projectId)
+    public async Task<Project> Show(int projectId)
     {
         var request = new RestRequest("/projects/{id}.json")
             .AddUrlSegment("id", projectId);
         
-        return _client.ExecuteAsync<Project>(request);
+        return await _client.ExecuteAsync<Project>(request);
     }
 
-    public Task<Projects> List()
+    public async Task<Projects> List()
     {
         var request = new RestRequest("/projects.json");
 
-        return _client.ExecuteAsync<Projects>(request);
+        return await _client.ExecuteAsync<Projects>(request);
     }
 
-    public Task<Project> Create(Project? project)
+    public async Task<Project> Create(Project? project)
     {
         var request = new RestRequest("/projects.json", Method.Post)
             .AddJsonBody(project);
         
-        return _client.ExecuteAsync<Project>(request);
+        return await _client.ExecuteAsync<Project>(request);
     }
 
-    public Task<ErrorResponse> CreateWithInvalidData(Project? project)
+    public async Task<ErrorResponse> CreateWithInvalidData(Project? project)
     {
         var request = new RestRequest("/projects.json", Method.Post)
             .AddJsonBody(project);
         
-        return _client.ExecuteAsync<ErrorResponse>(request);
+        return await _client.ExecuteAsync<ErrorResponse>(request);
     }
 
     public HttpStatusCode Delete(int projectId)
