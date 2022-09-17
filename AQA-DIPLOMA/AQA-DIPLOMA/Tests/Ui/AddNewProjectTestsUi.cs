@@ -19,11 +19,12 @@ public class AddNewProjectTestsUi : BaseTestUi
     private Project _project = null!;
     private RestClientExtended _client = null!;
     private ProjectService _projectService = null!;
+    private LoginSteps _loginSteps = null!;
 
     [SetUp]
     public void InitSteps()
     {
-        AddProjectSteps = new AddProjectSteps(_driver);
+        _loginSteps = new LoginSteps(_driver);
     }
 
     [OneTimeSetUp]
@@ -37,12 +38,11 @@ public class AddNewProjectTestsUi : BaseTestUi
     [Category("Positive")]
     [TestCase(1), TestCase(149), TestCase(150)]
     [AllureName("Create a new project with an acceptable lenght of name")]
-    [AllureTms("TMS", "expand_section=338413#case_3572037")]
     public void Add_new_project(int lenghtOfProjectName)
     {
         _project = new ProjectFaker(lenghtOfProjectName).Generate();
         
-        LoginSteps
+        _loginSteps
             .OpenMainPage()
             .ClickButtonLoginOnMainPage()
             .ClickButtonLoginOnNavigatorPage()
@@ -60,12 +60,11 @@ public class AddNewProjectTestsUi : BaseTestUi
     [AllureName("Create a new project with an invalid lenght of name")]
     [TestCase(151, "Name is too long (maximum is 150 characters)")]
     [TestCase(0, "Name can't be blank")]
-    [AllureTms("TMS", "expand_section=338413#case_3572037")]
     public void Add_new_proj(int lenghtOfProjectName, string errorText)
     {
         _project = new ProjectFaker(lenghtOfProjectName).Generate();
         
-        LoginSteps.OpenMainPage()
+        _loginSteps.OpenMainPage()
             .ClickButtonLoginOnMainPage()
             .ClickButtonLoginOnNavigatorPage()
             .InputUsernameAndPassword(Configurator.Admin.Email, Configurator.Admin.Password)

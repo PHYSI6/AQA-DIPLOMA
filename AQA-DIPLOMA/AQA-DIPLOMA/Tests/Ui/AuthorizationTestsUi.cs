@@ -11,19 +11,19 @@ namespace AQA_DIPLOMA.Tests.Ui;
 [AllureSuite("Authorization UI")]
 public class AuthorizationTestsUi : BaseTestUi
 {
+    private LoginSteps _loginSteps = null!;
     [SetUp]
     public void InitSteps()
     {
-        LoginSteps = new LoginSteps(_driver);
+        _loginSteps = new LoginSteps(_driver);
     }
     
     [Test]
     [Category("Positive")]
     [AllureName("Authorization with correct login and password")]
-    [AllureTms("TMS", "expand_section=338413#case_3571834")]
     public void Authorization_with_correct_data()
     {
-        LoginSteps
+        _loginSteps
             .OpenMainPage()
             .ClickButtonLoginOnMainPage()
             .ClickButtonLoginOnNavigatorPage()
@@ -37,10 +37,9 @@ public class AuthorizationTestsUi : BaseTestUi
     [AllureName("Authorization with non-existent login and password")]
     [TestCase("uncorrectmail", "uncorrectpassword")]
     [TestCase("\" = \"", "\" = \"")]
-    [AllureTms("TMS", "expand_section=338413#case_3571834")]
     public void Authorization_with_non_existent_data(string username, string password)
     {
-        LoginSteps
+        _loginSteps
             .OpenMainPage()
             .ClickButtonLoginOnMainPage()
             .ClickButtonLoginOnNavigatorPage()
@@ -53,10 +52,9 @@ public class AuthorizationTestsUi : BaseTestUi
     [AllureName("Authorization with empty login and password")]
     [TestCase(" ", " ")]
     [Category("Negative")]
-    [AllureTms("TMS", "expand_section=338413#case_3571834")]
     public void Authorization_with_empty_data(string username, string password)
     {
-        LoginSteps
+        _loginSteps
             .OpenMainPage()
             .ClickButtonLoginOnMainPage()
             .ClickButtonLoginOnNavigatorPage()
