@@ -7,7 +7,7 @@ using RestSharp;
 
 namespace AQA_DIPLOMA.Services.ApiServices;
 
-public class ProjectService : IProjectService, IDisposable
+public class ProjectService : IDisposable
 {
     private readonly RestClientExtended _client;
 
