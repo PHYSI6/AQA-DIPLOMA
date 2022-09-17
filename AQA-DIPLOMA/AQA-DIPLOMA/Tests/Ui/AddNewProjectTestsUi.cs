@@ -4,6 +4,7 @@ using AQA_DIPLOMA.Configuration;
 using AQA_DIPLOMA.Fakers;
 using AQA_DIPLOMA.Models;
 using AQA_DIPLOMA.Services.ApiServices;
+using AQA_DIPLOMA.Steps;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -18,6 +19,12 @@ public class AddNewProjectTestsUi : BaseTestUi
     private Project _project = null!;
     private RestClientExtended _client = null!;
     private ProjectService _projectService = null!;
+
+    [SetUp]
+    public void InitSteps()
+    {
+        AddProjectSteps = new AddProjectSteps(_driver);
+    }
 
     [OneTimeSetUp]
     public void SetUpClientAndServices()
@@ -35,14 +42,14 @@ public class AddNewProjectTestsUi : BaseTestUi
     {
         _project = new ProjectFaker(lenghtOfProjectName).Generate();
         
-        LoginSteps.OpenMainPage()
+        LoginSteps
+            .OpenMainPage()
             .ClickButtonLoginOnMainPage()
             .ClickButtonLoginOnNavigatorPage()
             .InputUsernameAndPassword(Configurator.Admin.Email, Configurator.Admin.Password)
             .ClickButtonContinue()
-            .AuthorizationSuccessCheck();
-
-        AddProjectSteps.ClickButtonNewProjectOnProjectPage()
+            .AuthorizationSuccessCheck()
+            .ClickButtonNewProjectOnProjectPage()
             .InputNewProjectName(_project.Name)
             .ClickButtonAddProject()
             .ProjectAdditionSuccessCheck();
@@ -63,9 +70,8 @@ public class AddNewProjectTestsUi : BaseTestUi
             .ClickButtonLoginOnNavigatorPage()
             .InputUsernameAndPassword(Configurator.Admin.Email, Configurator.Admin.Password)
             .ClickButtonContinue()
-            .AuthorizationSuccessCheck();
-
-        AddProjectSteps.ClickButtonNewProjectOnProjectPage()
+            .AuthorizationSuccessCheck()
+            .ClickButtonNewProjectOnProjectPage()
             .InputNewProjectName(_project.Name)
             .ClickButtonAddProject()
             .ProjectAdditionErrorCheck(errorText);

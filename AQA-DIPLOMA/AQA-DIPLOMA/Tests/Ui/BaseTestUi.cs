@@ -8,7 +8,7 @@ namespace AQA_DIPLOMA.Tests.Ui;
 
 public class BaseTestUi
 {
-    [ThreadStatic] private static IWebDriver _driver;
+    [ThreadStatic] protected static IWebDriver _driver;
     protected LoginSteps LoginSteps = null!;
     protected AddProjectSteps AddProjectSteps = null!;
     
@@ -16,9 +16,6 @@ public class BaseTestUi
     public void SetUp()
     {
         _driver = new BrowserService().Driver;
-        
-        LoginSteps = new LoginSteps(_driver);
-        AddProjectSteps = new AddProjectSteps(_driver);
     }
 
     [TearDown]

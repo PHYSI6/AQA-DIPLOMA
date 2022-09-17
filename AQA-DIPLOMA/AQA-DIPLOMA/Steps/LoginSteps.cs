@@ -57,11 +57,11 @@ public class LoginSteps : BaseStep
     }
     
     [AllureStep("Authorization success check")]
-    public LoginSteps AuthorizationSuccessCheck()
+    public AddProjectSteps AuthorizationSuccessCheck()
     {
         ProjectsPage.PageOpened.Should().BeTrue();
 
-        return this;
+        return new AddProjectSteps(Driver);
     }
     
     [AllureStep("Checking for an authorization error")]

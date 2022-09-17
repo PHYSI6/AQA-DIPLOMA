@@ -1,4 +1,5 @@
 ﻿using AQA_DIPLOMA.Configuration;
+using AQA_DIPLOMA.Steps;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -10,13 +11,20 @@ namespace AQA_DIPLOMA.Tests.Ui;
 [AllureSuite("Authorization UI")]
 public class AuthorizationTestsUi : BaseTestUi
 {
+    [SetUp]
+    public void InitSteps()
+    {
+        LoginSteps = new LoginSteps(_driver);
+    }
+    
     [Test]
     [Category("Positive")]
     [AllureName("Authorization with correct login and password")]
     [AllureTms("TMS", "expand_section=338413#case_3571834")]
     public void Authorization_with_correct_data()
     {
-        LoginSteps.OpenMainPage()
+        LoginSteps
+            .OpenMainPage()
             .ClickButtonLoginOnMainPage()
             .ClickButtonLoginOnNavigatorPage()
             .InputUsernameAndPassword(Configurator.Admin.Email, Configurator.Admin.Password)
@@ -32,7 +40,8 @@ public class AuthorizationTestsUi : BaseTestUi
     [AllureTms("TMS", "expand_section=338413#case_3571834")]
     public void Authorization_with_non_existent_data(string username, string password)
     {
-        LoginSteps.OpenMainPage()
+        LoginSteps
+            .OpenMainPage()
             .ClickButtonLoginOnMainPage()
             .ClickButtonLoginOnNavigatorPage()
             .InputUsernameAndPassword(username, password)
@@ -47,7 +56,8 @@ public class AuthorizationTestsUi : BaseTestUi
     [AllureTms("TMS", "expand_section=338413#case_3571834")]
     public void Authorization_with_empty_data(string username, string password)
     {
-        LoginSteps.OpenMainPage()
+        LoginSteps
+            .OpenMainPage()
             .ClickButtonLoginOnMainPage()
             .ClickButtonLoginOnNavigatorPage()
             .InputUsernameAndPassword(username, password)
